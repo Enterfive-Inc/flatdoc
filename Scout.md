@@ -813,6 +813,51 @@ GET
 * 500 - Error fetching request responses
 
 
+## Get Each Scout Paystack Cashout
+
+Get scouts Paystack Cashouts .
+
+> Endpoint: get_scout_paystack_cashouts
+
+> Payload
+``` python
+{
+    "idToken": "eyJhbGciOiJSUzI1NiIs...",
+    "uid": "db3aLSS5AtalI7xqCa...",
+    "scoutRef": "+2348062345678"
+}
+```
+
+> Result
+``` python
+{
+  "status": true,
+  "message": "Successful",
+  "totalPages": 5,
+  "totalCashouts": 25,
+  "pageSize": 5,
+  "currentPage": 1,
+   "cashouts": [
+      {
+          "updatedAt": "2021-01-05T11:13:35.252Z",
+          "exchangeRate": null,
+          "amount": 54,
+          "responseCode": 0,
+          "withdrawalCode": null,
+          "receiverRegistrationStatus": "UNREGISTERED",
+          "referenceNumber": "3cdf95cc-54fc-4e1b-bb68-23a0e912ee89",
+          "message": "You have successfully sent N54.00 to +2347030287520. Paga Txn ID: WG7H2. Thank you for using Paga!",
+          "transactionId": "WG7H2",
+          "currency": "NGN",
+          "fee": 150
+      }
+    .
+    .
+    .
+  ]
+}
+```
+
 ## Get Scouts Paystack Cashout
 
 Get scouts Paystack Cashouts and Chart.
@@ -870,6 +915,51 @@ Get scouts Paystack Cashouts and Chart.
         "failedCount": 0,
         "failedAmount": 0
     }
+    .
+    .
+    .
+  ]
+}
+```
+
+## Get Each Scout Paga Cashout
+
+Get each scout Paga Cashouts .
+
+> Endpoint: get_scout_paga_cashouts
+
+> Payload
+``` python
+{
+    "idToken": "eyJhbGciOiJSUzI1NiIs...",
+    "uid": "db3aLSS5AtalI7xqCa...",
+    "scoutRef": "+2348062345678"
+}
+```
+
+> Result
+``` python
+{
+  "status": true,
+  "message": "Successful",
+  "totalPages": 5,
+  "totalCashouts": 25,
+  "pageSize": 5,
+  "currentPage": 1,
+   "cashouts": [
+      {
+          "updatedAt": "2021-01-05T11:13:35.252Z",
+          "exchangeRate": null,
+          "amount": 54,
+          "responseCode": 0,
+          "withdrawalCode": null,
+          "receiverRegistrationStatus": "UNREGISTERED",
+          "referenceNumber": "3cdf95cc-54fc-4e1b-bb68-23a0e912ee89",
+          "message": "You have successfully sent N54.00 to +2347030287520. Paga Txn ID: WG7H2. Thank you for using Paga!",
+          "transactionId": "WG7H2",
+          "currency": "NGN",
+          "fee": 150
+      }
     .
     .
     .
