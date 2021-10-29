@@ -787,6 +787,57 @@ GET
 * 500 - Error fetching request responses
 
 
+## Get Each Scout Paystack Cashout
+
+Get each scout Paystack Cashouts .
+
+> Endpoint: get_scout_paystack_cashouts
+
+> Payload
+``` python
+{
+    "idToken": "eyJhbGciOiJSUzI1NiIs...",
+    "uid": "db3aLSS5AtalI7xqCa...",
+    "scoutRef": "+2349017766085"
+}
+```
+
+> Result
+``` python
+{
+  "status": true,
+  "message": "Successful",
+  "totalPages": 5,
+  "totalCashouts": 25,
+  "pageSize": 5,
+  "currentPage": 1,
+   "cashouts": [
+      {
+          "scoutRef": "+2349017766085",
+          "data": {
+              "updatedAt": "2020-09-12T15:24:10.805Z",
+              "reference": "009f685e-604f-4140-9b6f-00408eaadb56",
+              "status": "success",
+              "recipient": 8758390,
+              "amount": 189000,
+              "reason": "Redeem Versus scout credits",
+              "integration": 146241,
+              "domain": "test",
+              "source": "balance",
+              "currency": "NGN",
+              "transfer_code": "TRF_63y76ctdr8a8cr7",
+              "createdAt": "2020-09-12T15:24:10.805Z",
+              "id": 32768223
+          },
+          "message": "Transfer has been queued",
+          "status": true
+      }
+    .
+    .
+    .
+  ]
+}
+```
 ## Get Scouts Paystack Cashout
 
 Get scouts Paystack Cashouts and Chart.
@@ -851,6 +902,50 @@ Get scouts Paystack Cashouts and Chart.
 }
 ```
 
+## Get Each Scout Paga Cashout
+
+Get each scout Paga Cashouts .
+
+> Endpoint: get_scout_paga_cashouts
+
+> Payload
+``` python
+{
+    "idToken": "eyJhbGciOiJSUzI1NiIs...",
+    "uid": "db3aLSS5AtalI7xqCa...",
+    "scoutRef": "+2347030287520"
+}
+```
+
+> Result
+``` python
+{
+  "status": true,
+  "message": "Successful",
+  "totalPages": 5,
+  "totalCashouts": 25,
+  "pageSize": 5,
+  "currentPage": 1,
+   "cashouts": [
+      {
+          "updatedAt": "2021-01-05T11:13:35.252Z",
+          "exchangeRate": null,
+          "amount": 54,
+          "responseCode": 0,
+          "withdrawalCode": null,
+          "receiverRegistrationStatus": "UNREGISTERED",
+          "referenceNumber": "3cdf95cc-54fc-4e1b-bb68-23a0e912ee89",
+          "message": "You have successfully sent N54.00 to +2347030287520. Paga Txn ID: WG7H2. Thank you for using Paga!",
+          "transactionId": "WG7H2",
+          "currency": "NGN",
+          "fee": 150
+      }
+    .
+    .
+    .
+  ]
+}
+```
 
 ## Get Scouts Paga Cashout
 
