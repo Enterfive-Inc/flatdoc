@@ -1336,6 +1336,44 @@ Get client data
 - 404 - Client or Team does not exist
 - 500 - Backend service error
 
+## Get Clients
+
+Get clients data
+
+> Endpoint: versus_v2_get_clients
+
+> Payload
+
+```json
+{
+  "page": 1,
+  "size": 10,
+  "authstring": "13238bee-3ac9-4c77-b3b1"
+}
+```
+
+> Response
+
+```json
+{
+  "message": "Successfully obtained clients",
+  "totalPages": 1,
+  "totalClients": 10,
+  "pageSize": 10,
+  "currentPage": 1,
+  "clients": [],
+
+}
+```
+
+**Errors**
+
+- 400 - Missing required parameters
+- 401 - User is not authorized to make this request || Error authenticating user
+- 404 - No record found
+- 500 - Backend service error
+
+
 ## Get Subscription Status
 
 Get subscription status
