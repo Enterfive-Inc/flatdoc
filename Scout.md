@@ -65,6 +65,7 @@ Add a scout - firstName, lastName and phoneNumber are required
   "country": "country",
   "state": "state",
   "language": "English",
+  "scoutPartnerRef":"AIESEC" // the scout partner's name
   "source": "webApp" // enum "ussd", "androidApp"
 }
 ```
