@@ -192,6 +192,8 @@ POST
       "religion": null,
       "startAge": 20,
       "startDate": "2000-10-10 00:00:00",
+      "lga_id": 2,
+      "interest_id": 32,
       "versusCreditsAccruing": 0
     }
   ]
@@ -927,11 +929,12 @@ POST
 
 **Query params**
 
-| Field       | Type             | Description             |
-| ----------- | ---------------- | ----------------------- |
-| phoneNumber | string           | Scout unique identifier |
-| authString  | string           | Authentication string   |
-| mediaType   | string(optional) | audio, video, photo     |
+| Field        | Type             | Description             |
+| ------------ | ---------------- | ----------------------- |
+| phoneNumber  | string           | Scout unique identifier |
+| authString   | string           | Authentication string   |
+| mediaType    | string(optional) | audio, video, photo     |
+| interactType | string(optional) | link_based, app_based   |
 
 > Sample response
 
@@ -955,6 +958,19 @@ POST
       "spotsLeft": 500,
       "mediaType": "image",
       "status": "live",
+      "mediaType": "photo",
+      "interactType": "link_based",
+      "startAge": 26,
+      "endAge": 45,
+      "soccerFan": null,
+      "sportsFan": null,
+      "favoriteTeamId": null,
+      "activatedAt": "2023-08-16T11:47:43.913Z",
+      "createdAt": "2023-08-16T11:47:43.913Z",
+      "completedAt": null,
+      "category": "social_media",
+      "link": "https://www.google.com",
+      "instructions": "enter the menu",
       "versusCreditsAccruing": 2
     }
   ]
