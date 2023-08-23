@@ -865,7 +865,9 @@ Add a new campaign
   "interest_id": 2,
   "soccer_fan": true,
   "sports_fan": true,
-  "favorite_team_id": 3
+  "favorite_team_id": 3,
+  "interest_ids": ["2"],
+  "lga_ids": ["2"]
 }
 ```
 
@@ -1254,7 +1256,31 @@ Get campaign data
 ```json
 {
   "message": "Successfully obtained campaign data",
-  "campaign": {},
+  "campaign": {
+    "campaignRef": "f12dfddc-ba3f-4cc1",
+    "clientRef": "738e74394893",
+    "campaignName": "testing name",
+    "description": "sda",
+    "startDate": null,
+    "endDate": null,
+    "created_at": "2023-08-21T11:49:42.580Z",
+    "activated_at": null,
+    "deactivated_at": null,
+    "completed_at": null,
+    "start_age": 26,
+    "end_age": 45,
+    "isDemographicSurvey": false,
+    "status": "draft",
+    "numberOfRespondents": 2,
+    "gender": ["male", "female"],
+    "country": 160,
+    "stateOrRegion": [null],
+    "interest_id": [2],
+    "lga_id": [2],
+    "sports_fan": null,
+    "soccer_fan": null,
+    "favorite_team_id": null
+  },
   "questionsData": [
     {
       "questionRef": "08f7af41-2774-4f7c-a33d-ba3e00b72723",
@@ -3049,6 +3075,43 @@ Get total number of client request respondents.
 - 404 - Team does not exist for client | Multimedia requests do not exist
 - 500 - Error obtaining total number of client request responses | Error obtaining client team for authorization
 
+## Get Total Client Request Respondents
+
+Get total number of estimated filtered survey respondents.
+
+**Endpoint** versus_v2_get_total_estimated_filtered_survey_respondents
+
+> Payload
+
+```json
+{
+  "clientRef": "72391231wer",
+  "idToken": "eghsgafs;093ok23we",
+  "uid": "8972938jfwjr2",
+  "lga_ids": [2, 45],
+  "age": [16, 60],
+  "gender": ["female", "male"],
+  "interest_ids": [20, 21]
+}
+```
+
+> Response
+
+```json
+{
+  "message": "Successfully obtained total estimated survey respondents",
+  "totalFilteredSurveyRespondents": 2
+}
+```
+
+**Errors**
+
+- 400 - Missing parameter | Invalid param ... Should be of type ...
+- 401 - User is not authorized to make this request | Error authenticating user
+- 403 - Only POST requests are allowed | Unauthorized request
+- 404 - Team does not exist for client | Multimedia requests do not exist
+- 500 - Oops! Something happened from our end | Error obtaining client team for authorization
+
 ## Get Request
 
 Get a multimedia request/campaign
@@ -3072,20 +3135,43 @@ Get a multimedia request/campaign
 {
   "message":"Successfully obtained multimedia request",
   "request": {
-       "clientRef": "12345",
-       "requestName": "Footage of the Lekki Protest",
-       "description": "Let’s get you started with a simple photo request.",
-       "requestRef": "001a0ad177c-a6d0-44a4-8662-7f2851093b81",
-       "country": "NG",
-       "stateOrRegion": "Lagos",
-       "endAge": 65,
-       "startAge": 16,
-       "gender": "female",
-       "numberOfRespondents": 500,
-       "mediaType": "audio",
-       "status": "live",
-       "created": "Thu Nov 12 2020 14:20:50 GMT+0100 (West Africa Standard Time)",
-    }
+      "campaignRef": "43e3e2ac-8001",
+      "clientRef": "8802jkkdfh32",
+      "name": "testing name",
+      "description": "sda",
+      "mediaType": "photo",
+      "startDate": null,
+      "endDate": null,
+      "created_at": "2023-08-23T12:10:06.283Z",
+      "activated_at": "2023-08-23T12:10:06.283Z",
+      "deactivated_at": null,
+      "completed_at": null,
+      "start_age": 26,
+      "end_age": 45,
+      "status": "live",
+      "numberOfRespondents": 2,
+      "spotsLeft": null,
+      "sports_fan": null,
+      "soccer_fan": null,
+      "favorite_team_id": null,
+      "instructions": "enter the menu",
+      "link": "https://www.google.com",
+      "category": "social_media",
+      "interact_type": "link_based",
+      "country": "NG",
+      "stateOrRegion": [],
+      "gender": [
+          "male",
+          "female"
+      ],
+      "interest_id": [
+          4,
+          2
+      ],
+      "lga_id": [
+          2
+      ]
+  }
 }
 ```
 
@@ -3187,7 +3273,16 @@ Create a new multimedia request.
   "startAge": 16,
   "gender": "female",
   "numberOfRespondents": 500,
-  "mediaType": "image"
+  "mediaType": "photo",
+  "interactType": "link_based",
+  "soccer_fan": "",
+  "sports_fan": false,
+  "interest_ids": [],
+  "lga_ids": [],
+  "favorite_team_id": "",
+  "category": "Custom task",
+  "link": "https://www.youtube.com/watch?v=fQith6IciwA",
+  "instructions": "testing link"
 }
 ```
 
