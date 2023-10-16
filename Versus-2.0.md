@@ -102,6 +102,39 @@ or
 - 404 - Scout does not exist
 - 500 - Backend service error || Oops! Something happened from our end
 
+## Stop Campaign
+
+This is called when the campaign is stopped
+
+> Endpoint: versus_v2_stop_campaign
+
+> Payload
+
+```json
+{
+  "campaignRef": "47b73826-e9b2-412f-b8b4-c055eeec778b",
+  "uid": "738jncjwenkn",
+  "idToken": "ehnkaelkamed,jewksmaf;a/fefenekeekkj",
+  "clientRef": "47b73826-e9b2-412"
+}
+```
+
+> Response
+
+```json
+{
+  "message": "Campaign has been stopped successfully"
+}
+```
+
+**Errors**
+
+- 400 - Missing parameters
+- 401 - Error authenticating user
+- 403 - Only POST requests are allowed
+- 404 - Campaign does not exist
+- 500 - Error obtaining campaign || Error obtaining campaign questions || Error obtaining number of respondents || Error stopping campaign
+
 ## Get Campaigns
 
 To obtain campaigns that match a scout's demographic.
