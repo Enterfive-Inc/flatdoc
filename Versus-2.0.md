@@ -867,7 +867,8 @@ Add a new campaign
   "sports_fan": true,
   "favorite_team_id": 3,
   "interest_ids": ["2"],
-  "lga_ids": ["2"]
+  "lga_ids": ["2"],
+  "mediaLink": "" //OPTIONAL; video link
 }
 ```
 
@@ -937,11 +938,51 @@ Add a new campaign question
   "idToken": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjU4ODI0YTI2ZjFlY2Q1NjEyN2U4OWY1YzkwYTg4MDYxMTJhYmU5OWMiLCJ0eXAiOiJKV1Q",
   "question": "Which snack do you like best?",
   "optionsType": "multiplechoice",
+  "mediaLink": "https://youtu.be/R4ZCIpvkYKI", //OPTIONAL
+  "base64EncodedImage": "", //OPTIONAL; base64 encoded image
+  "mediaType": "video", // OPTIONAL; either video or photo
   "optionsList": [
-    { "option": "Biscuits", "option_type": "specified" },
-    { "option": "Chocolate", "option_type": "specified" },
-    { "option": "Groundnuts", "option_type": "specified" },
-    { "option": "Others", "option_type": "unspecified" }
+    {
+      "option": "Biscuits",
+      "option_type": "specified",
+      "nps_group": null,
+      "skip_logic": {
+        "action_type": "NONE",
+        "jump_questionRef": null,
+        "jump_questionText": ""
+      },
+      "base64EncodedImage": "data:image/png;base64,..." //OPTIONAL; base64 encoded image
+    },
+    {
+      "option": "Chocolate",
+      "option_type": "specified",
+      "nps_group": null,
+      "skip_logic": {
+        "action_type": "NONE",
+        "jump_questionRef": null,
+        "jump_questionText": ""
+      }
+    },
+    {
+      "option": "Groundnuts",
+      "option_type": "specified",
+      "nps_group": null,
+      "skip_logic": {
+        "action_type": "NONE",
+        "jump_questionRef": null,
+        "jump_questionText": ""
+      }
+    },
+    {
+      "option": "Others",
+      "option_type": "unspecified",
+      "nps_group": null,
+      "skip_logic": {
+        "action_type": "NONE",
+        "jump_questionRef": null,
+        "jump_questionText": ""
+      }
+    }
   ],
   "campaignRef": "48afd59b-c367-4d60-a695-76984fb65be8"
 }
@@ -1021,7 +1062,8 @@ Update a campaign
   "interest_id": 2,
   "soccer_fan": true,
   "sports_fan": true,
-  "favorite_team_id": 3
+  "favorite_team_id": 3,
+  "mediaLink": "" //OPTIONAL; video link
 }
 ```
 
@@ -2926,10 +2968,7 @@ Generates and downloads Versus comparison pdf report based on filter parameters
     "others": []
   },
   "uid": "dK8IJ5G9Z1PfH8Enclct5lu0vIk1",
-  "brands": [
-    "2a304e66-2392-4b25-bd84-f5b7cc6d6aa5",
-    "9da210aa-1033-49ce-aff8-b451b6bece85"
-  ]
+  "brands": ["2a304e66-2392-4b25-bd84-f5b7cc6d6aa5", "9da210aa-1033-49ce-aff8-b451b6bece85"]
 }
 ```
 
