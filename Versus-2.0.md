@@ -938,9 +938,8 @@ Add a new campaign question
   "idToken": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjU4ODI0YTI2ZjFlY2Q1NjEyN2U4OWY1YzkwYTg4MDYxMTJhYmU5OWMiLCJ0eXAiOiJKV1Q",
   "question": "Which snack do you like best?",
   "optionsType": "multiplechoice",
-  "mediaLink": "https://youtu.be/R4ZCIpvkYKI", //OPTIONAL
-  "base64EncodedImage": "", //OPTIONAL; base64 encoded image
-  "mediaType": "video", // OPTIONAL; either video or photo
+  "media_link": "https://youtu.be/R4ZCIpvkYKI", //OPTIONAL
+  "media_type": "video", // REQUIRED if media_link is set; either video or photo
   "optionsList": [
     {
       "option": "Biscuits",
@@ -951,7 +950,7 @@ Add a new campaign question
         "jump_questionRef": null,
         "jump_questionText": ""
       },
-      "base64EncodedImage": "data:image/png;base64,..." //OPTIONAL; base64 encoded image
+      "image_link": "https://storage.googleapis.com/download/storage/v1/b/versus-scout-dev.appspot.com/o/campaign-images%2FNTAuMjA0MzQzMDYwMzE1Njc=-d28561f5-aed0-435f-8be6-986284644c4b.jpeg?generation=1698267758985089&alt=media" //OPTIONAL;
     },
     {
       "option": "Chocolate",
@@ -3596,12 +3595,43 @@ versus_v2_approve_request_response
   "idToken": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjU4ODI0YTI2ZjFlY2Q1NjEyN2U4OWY1YzkwYTg4MDYxMTJhYmU5OWMiLCJ0eXAiOiJKV1Qi",
   "question": "Which snack do you like best?",
   "optionsType": "multiplechoice",
+  "media_link": "https://youtu.be/R4ZCIpvkYKI", //OPTIONAL
+  "media_type": "video", // REQUIRED if media_link is set; either video or photo
   "optionsList": [
-    { "option": "Biscuits", "option_type": "specified", "id": 2623 },
-    { "option": "Chocolate", "option_type": "specified", "id": 2624 },
-    { "option": "Groundnuts", "option_type": "specified", "id": 2625 },
-    { "option": "Peanuts", "option_type": "specified", "id": "new" },
-    { "option": "Other", "option_type": "unspecified", "id": 2626 }
+    {
+      "id": "new",
+      "option": "Biscuits",
+      "option_type": "specified",
+      "nps_group": null,
+      "skip_logic": {
+        "action_type": "NONE",
+        "jump_questionRef": null,
+        "jump_questionText": ""
+      },
+      "image_link": "https://storage.googleapis.com/download/storage/v1/b/versus-scout-dev.appspot.com/o/campaign-images%2FNTAuMjA0MzQzMDYwMzE1Njc=-d28561f5-aed0-435f-8be6-986284644c4b.jpeg?generation=1698267758985089&alt=media" //OPTIONAL;
+    },
+    {
+      "id": 34526,
+      "option": "Chocolate",
+      "option_type": "specified",
+      "nps_group": null,
+      "skip_logic": {
+        "action_type": "NONE",
+        "jump_questionRef": null,
+        "jump_questionText": ""
+      }
+    },
+    {
+      "id": 34562,
+      "option": "Groundnuts",
+      "option_type": "specified",
+      "nps_group": null,
+      "skip_logic": {
+        "action_type": "NONE",
+        "jump_questionRef": null,
+        "jump_questionText": ""
+      }
+    }
   ],
   "campaignRef": "48afd59b-c367-4d60-a695-76984fb65be8",
   "questionRef": "073c36b7-0bdb-46a2-9c55-114b4a65e741",
