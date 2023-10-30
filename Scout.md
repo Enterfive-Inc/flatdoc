@@ -194,6 +194,7 @@ POST
       "startDate": "2000-10-10 00:00:00",
       "lga_id": 2,
       "interest_id": 32,
+      "media_link":"https://...", // can be null
       "versusCreditsAccruing": 0
     }
   ]
@@ -327,6 +328,8 @@ Get the questions associated with a campaign.
       "questionRef": "073c36b7-0bdb-46a2-9c55-114b4a65e741",
       "campaignRef": "48afd59b-c367-4d60-a695-76984fb65be8",
       "question": "Which snack do you like best?",
+      "media_link": "https://youtube.com/yrqurxk5t", // can be null
+      "media_type": "video", // photo or video or null
       "response_type": "multiplechoice",
       "response_units": "single_select",
       "response_lower_range": null,
@@ -335,6 +338,7 @@ Get the questions associated with a campaign.
       "campaignName": "Lawyers Survey",
       "clientsName": "",
       "campaignDescription": "Lawyers",
+      "campaignMediaLink": "https://...",
       "clientRef": "nqaXKB0SzWN6xh7RVyzl",
       "options": {
         "options_list": [
@@ -674,14 +678,7 @@ Get list of states and the corresponding local government given the country_id
       "id": 1,
       "country_id": 160,
       "name": "Abia",
-      "lga": [
-        "Aba North",
-        "Arochukwu",
-        "Aba South",
-        "Bende",
-        "Isiala Ngwa North",
-        "Ikwuano"
-      ]
+      "lga": ["Aba North", "Arochukwu", "Aba South", "Bende", "Isiala Ngwa North", "Ikwuano"]
     }
   ]
 }
