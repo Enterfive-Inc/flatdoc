@@ -350,7 +350,7 @@ Get the questions associated with a campaign.
               "action_type": "JUMP",
               "jump_questionRef": "8f80e145-eb1b-4c5e-92a4-60a8523ebb0f"
             },
-            "image_link": "https://storage.google.com/..." // can be null
+            "image_link": "https://storage.google.com/..." // nullable
           },
           {
             "id": 2623,
