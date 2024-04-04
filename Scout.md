@@ -121,6 +121,38 @@ if accountNumber is provided then bankCode woud be required.
 }
 ```
 
+## Delete Scout
+
+Delete a scout - authstring, scoutRef and reasonForDeletion are required
+
+**Endpoint**: scout_delete_scout
+
+**Method**: POST
+
+**Payload**
+
+```json
+{
+  "authstring": "authstring",
+  "scoutRef": "+16505553435",
+  "reasonForDeletion": "I'm tired of explaining myself"
+}
+```
+
+> Result
+
+```json
+{
+  "message": "Successfully deleted scout"
+}
+```
+
+**Errors**
+
+- 400 - Missing body parameter(s): scoutRef, authstring, reasonForDeletion
+- 404 - Scout does not exist
+- 500 - Unable to delete scout | Internal Server error
+
 ## Validate new Signup
 
 Validate scouts data b4 creating account for them.
@@ -679,7 +711,14 @@ Get list of states and the corresponding local government given the country_id
       "id": 1,
       "country_id": 160,
       "name": "Abia",
-      "lga": ["Aba North", "Arochukwu", "Aba South", "Bende", "Isiala Ngwa North", "Ikwuano"]
+      "lga": [
+        "Aba North",
+        "Arochukwu",
+        "Aba South",
+        "Bende",
+        "Isiala Ngwa North",
+        "Ikwuano"
+      ]
     }
   ]
 }
