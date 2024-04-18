@@ -12,11 +12,13 @@ Add a response to a question.
 
 ```javascript
 {
+  "authtoken":"",
   "cRef": "",
   "qRef": "",
   "sRef": "",
-  "optionRef": 2626,
-  "response": [{"option": "Small Chops", "option_type": "specified","id": 2626}],
+  "questionType":"", // freeform, nps, multiplechoice
+  "freeform_response":"my response", // required if questionType is "freeform", otherwise nullable
+  "responseOptions": [{"option": "Small Chops", "option_type": "specified","id": 2626}], // required if questionType is nps or multiplechoice, otherwise nullable
   "clientRef": ""
 }
 ```
@@ -30,11 +32,18 @@ Add a response to a question.
     "questionRef": "c30e78b6-ff88-49a5-91e9-bb7fb46f1455"
     "scoutRef": "ea7ca901-9217-4a04-9af4-3c6c21ccc3a2",
     "optionRef": "optionRef",
-    "response": "response",
+    "responseOptions": [{"option": "Small Chops", "option_type": "specified","id": 2626}] | null,
+    "freeform_response": "freeform_response" | null
     "clientRef": "clientRef"
   }
 }
 ```
+
+> Errors
+
+- 401 - Missing/Invalid authtoken
+- 400 - Bad Request / input validation fails
+- 500 - Internal Server Error
 
 ## Create Scout
 
