@@ -2641,6 +2641,54 @@ Get Survey options data
 - 401 - User is not authorized to make this request || Error authenticating user
 - 500 - Backend service error
 
+## Get Survey Freeform Question Responses Data
+
+Get Survey Freeform Question Responses Data
+
+> Endpoint: versus_v2_get_survey_freeform_question_responses_data
+
+> Payload
+
+```json
+{
+  "campaignRef": "",
+  "questionRef": "",
+  "age": [1, 70],
+  "gender": ["female", "male", "other"],
+  "tribe": ["igbo", "hausa", "yoruba", "other"],
+  "educationLevel": ["Senior Secondary", "Primary"],
+  "religion": ["other", "christian"],
+  "relationshipStatus": ["Single", "Married"],
+  "employmentStatus": ["student"],
+  "childrenInHousehold": ["3_to_5", "5_to_10"],
+  "personsInHousehold": ["3_to_5"],
+  "householdEarningsMonthly": ["100_to_500_USD"],
+  "personalEarningsMonthly": ["100_to_500_USD"],
+  "childrenUnder18": ["yes"],
+  "states": ["Delta"],
+  "targetQuestionRefToFilterBy": "6cd0ba7a-31dd-492a-acb6-05b93cdd6a10", //Optional
+  "targetResponseOptionToFilterBy": "I don't know" //Optional
+}
+```
+
+> Response
+
+```json
+{
+  "message": "Successfully obtained freeform question responses data",
+  "totalSurveyResponses": 12,
+  "totalQuestionResponses": 5,
+  "totalFilteredSurveyResponses": 2,
+  "totalFilteredQuestionResponses": 0
+}
+```
+
+**Errors**
+
+- 400 - Missing required parameters
+- 401 - User is not authorized to make this request || Error authenticating user
+- 500 - Backend service error
+
 ## get Total Filtered Survey Respondents
 
 Get Total Filtered Survey Respondents
@@ -3000,7 +3048,10 @@ Generates and downloads Versus comparison pdf report based on filter parameters
     "others": []
   },
   "uid": "dK8IJ5G9Z1PfH8Enclct5lu0vIk1",
-  "brands": ["2a304e66-2392-4b25-bd84-f5b7cc6d6aa5", "9da210aa-1033-49ce-aff8-b451b6bece85"]
+  "brands": [
+    "2a304e66-2392-4b25-bd84-f5b7cc6d6aa5",
+    "9da210aa-1033-49ce-aff8-b451b6bece85"
+  ]
 }
 ```
 
